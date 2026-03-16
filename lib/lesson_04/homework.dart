@@ -1,3 +1,5 @@
+// ignore_for_file: equal_elements_in_set
+
 void main() {
   primitives();
   collections();
@@ -31,7 +33,7 @@ void primitives() {
 /// 3. Map — 3 предмети та їх оцінки
 void collections() {
   final colors = <String>['black', 'white', 'red'];
-  final grades = <int>{5, 4, 3};
+  final grades = <int>{5, 4, 3, 5, 5}; // виведе тільки {5, 4, 3} - додав ignore_for_file
   final subjects = <String, int>{
     'math': 5,
     'art': 4,
@@ -47,7 +49,20 @@ void collections() {
 /// 1. Створи змінну через var — наприклад, місто проживання та зміни її декілька разів (print після кожної зміни)
 /// 2. Створи змінну через final — наприклад, країна
 /// 3. Створи змінну через const — наприклад, кількість днів у тижні
-void varFinalConst() {}
+void varFinalConst() {
+  var city = 'Kiev';
+  print(city);
+  city = 'Kharkiv';
+  print(city);
+  city = 'Dnepr';
+  print(city);
+
+  final country = 'Ukraine';
+  print(country);
+
+  const daysInWeek = 7;
+  print(daysInWeek);
+}
 
 /// Завдання 4: Record
 /// Створи іменований та не іменований (позиційний) record з твоїм ім'ям та віком і виведи обидва поля.
