@@ -49,20 +49,7 @@ void collections() {
 /// 1. Створи змінну через var — наприклад, місто проживання та зміни її декілька разів (print після кожної зміни)
 /// 2. Створи змінну через final — наприклад, країна
 /// 3. Створи змінну через const — наприклад, кількість днів у тижні
-void varFinalConst() {
-  var city = 'Kiev';
-  print(city);
-  city = 'Kharkiv';
-  print(city);
-  city = 'Dnepr';
-  print(city);
-
-  final country = 'Ukraine';
-  print(country);
-
-  const daysInWeek = 7;
-  print(daysInWeek);
-}
+void varFinalConst() {}
 
 /// Завдання 4: Record
 /// Створи іменований та не іменований (позиційний) record з твоїм ім'ям та віком і виведи обидва поля.
