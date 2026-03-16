@@ -29,7 +29,19 @@ void primitives() {
 /// 1. List — 3 твої улюблені кольори
 /// 2. Set — 3 унікальні оцінки, спробуй створити перевір print-ми, що вони не виводяться
 /// 3. Map — 3 предмети та їх оцінки
-void collections() {}
+void collections() {
+  final colors = <String>['black', 'white', 'red'];
+  final grades = <int>{5, 4, 3};
+  final subjects = <String, int>{
+    'math': 5,
+    'art': 4,
+    'science': 5,
+  };
+
+  print('Colors: $colors');
+  print('Grades: $grades');
+  print('Subjects: $subjects');
+}
 
 /// Завдання 3: var, final, const
 /// 1. Створи змінну через var — наприклад, місто проживання та зміни її декілька разів (print після кожної зміни)
