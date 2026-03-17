@@ -53,7 +53,17 @@ void task2() {
 /// Чи можна зробити покупку (якщо є гроші і магазин відкритий).
 /// Чи потрібно почекати (якщо магазин закритий або немає грошей).
 /// Використайте оператори &&, ||, !.
-void task3() {}
+void task3() {
+  var hasMoney = true;
+  var isStoreOpen = false;
+
+  print('Can make a purchase: ${hasMoney && isStoreOpen}');
+
+  hasMoney = false;
+  isStoreOpen = true;
+
+  print('Need to wait: ${!isStoreOpen || !hasMoney}');
+}
 
 /// Завдання 4: Тернарний оператор
 /// Створіть змінну temperature.
