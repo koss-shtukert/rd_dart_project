@@ -74,7 +74,23 @@ void task3() {
 /// Потім створіть ще один тернарний оператор:
 /// Якщо менше 10 — вивести “Дуже холодно”.
 
-void task4() {}
+void task4() {
+  var temperature = 26;
+
+  final result1 = temperature > 25 ? 'Тепло' : 'Прохолодно';
+
+  temperature = 25;
+
+  final result2 = temperature <= 25 ? 'Прохолодно' : 'Тепло';
+
+  temperature = 9;
+
+  final result3 = temperature < 10 ? 'Дуже холодно' : result1;
+
+  print(result1);
+  print(result2);
+  print(result3);
+}
 
 /// Завдання 5: Оператори присвоєння
 /// Використовувати тільки оператори присвоєння (+=, -=, *=, /=)
