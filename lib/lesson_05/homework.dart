@@ -158,7 +158,35 @@ void task6() {
 /// Якщо день не від 1 до 7 — вивести “Невірний номер дня”.
 /// Додатково: для вихідних (6, 7) вивести “Вихідний день 🎉”.
 
-void task7() {}
+void task7() {
+  var dayNumber = 6;
+
+  switch (dayNumber) {
+    case 1:
+      print('Понеділок');
+      break;
+    case 2:
+      print('Вівторок');
+      break;
+    case 3:
+      print('Середа');
+      break;
+    case 4:
+      print('Четвер');
+      break;
+    case 5:
+      print('П\'ятниця');
+      break;
+    case 6:
+      print('Субота! Вихідний день 🎉');
+      break;
+    case 7:
+      print('Неділя! Вихідний день 🎉');
+      break;
+    default:
+      print('Невірний номер дня');
+  }
+}
 
 /// Завдання 8: Цикли for
 /// Виведіть всі числа від 1 до 10.
