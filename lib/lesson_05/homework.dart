@@ -135,7 +135,7 @@ void task5() {
 /// Поексперементуйте, змінюючи  значення examScore
 
 void task6() {
-  var examScore = 56;
+  final examScore = 56;
 
   if (examScore < 20) {
     print('Повторити курс');
@@ -159,30 +159,21 @@ void task6() {
 /// Додатково: для вихідних (6, 7) вивести “Вихідний день 🎉”.
 
 void task7() {
-  var dayNumber = 6;
+  final dayNumber = 6;
 
   switch (dayNumber) {
     case 1:
       print('Понеділок');
-      break;
     case 2:
       print('Вівторок');
-      break;
     case 3:
       print('Середа');
-      break;
     case 4:
       print('Четвер');
-      break;
     case 5:
-      print('П\'ятниця');
-      break;
-    case 6:
+      print("П'ятниця");
+    case 6 || 7:
       print('Субота! Вихідний день 🎉');
-      break;
-    case 7:
-      print('Неділя! Вихідний день 🎉');
-      break;
     default:
       print('Невірний номер дня');
   }
@@ -200,16 +191,12 @@ void task8() {
 
   //variant 1
   for (var i = 1; i <= 10; i++) {
-    if (i % 2 == 0) {
-      print('Even: $i');
-    }
+    if (i % 2 == 0) print('Even: $i');
   }
 
   //variant 2
   for (var i = 1; i <= 10; i++) {
-    if (i.isEven) {
-      print('Even: $i');
-    }
+    if (i.isEven) print('Even: $i');
   }
 
   var sum = 0;
@@ -231,18 +218,10 @@ void task9() {
 
   while (i > 0) {
     //variant 1
-    if (i % 2 == 0) {
-      print('Парне число: $i');
-    } else {
-      print('Непарне число: $i');
-    }
+    i % 2 == 0 ? print('Парне число: $i') : print('Непарне число: $i');
 
     //variant 2
-    if (i.isEven) {
-      print('Парне число: $i');
-    } else {
-      print('Непарне число: $i');
-    }
+    i.isEven ? print('Парне число: $i') : print('Непарне число: $i');
 
     i--;
   }
@@ -256,13 +235,9 @@ void task9() {
 /// Виведіть тільки ті числа, які пройшли обидві перевірки.
 void task10() {
   for (var i = 1; i <= 20; i++) {
-    if (i % 3 == 0) {
-      continue;
-    }
+    if (i % 3 == 0) continue;
 
-    if (i > 15) {
-      break;
-    }
+    if (i > 15) break;
 
     print('Result: $i');
   }
