@@ -1,6 +1,9 @@
+import 'dart:async';
+
 void main() {
   task1();
   task2();
+  task3();
 }
 
 // Task 6: Стрім з чисел (fromIterable)
@@ -34,4 +37,25 @@ void task2() {
     const Duration(seconds: 1),
     (i) => i + 1,
   ).take(10).listen((event) => print('$event...'));
+}
+
+// Task 8: Робота з StreamController
+//
+// Створіть StreamController<String>.
+// Додайте до цього контролера кілька довільних рядкових значень вручну
+// (наприклад, "Hello", "World", "Dart").
+// Прослухайте цей стрім (через метод listen) і виведіть всі значення у консоль.
+// Закрийте контролер після додавання всіх значень.
+// Використайте callback onDone у методі listen, щоб вивести повідомлення
+// "Стрім завершено" після того, як стрім буде закритий.
+void task3() {
+  final controller = StreamController<String>();
+
+  controller.sink.add('Hello');
+  controller.sink.add('World');
+  controller.sink.add('Dart');
+
+  controller.stream.listen(print, onDone: () => print('Стрім завершено'));
+
+  controller.close();
 }
