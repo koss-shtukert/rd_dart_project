@@ -2,6 +2,7 @@ void main() {
   task1();
   task2();
   task3();
+  task4();
 }
 
 Future<String> fetchName(String name) async {
@@ -83,5 +84,37 @@ void task3() {
 
       print('Час виконання: ${sw.elapsedMilliseconds} мс');
     });
+  });
+}
+
+// Task 4: Паралельне виконання Future (Future.wait)
+//
+// Виконайте методи fetchName() та fetchAge() паралельно
+// за допомогою Future.wait.
+// Виміряйте та виведіть час виконання.
+void task4() {
+  final sw = Stopwatch()..start();
+
+  Future.wait([fetchName('Костянтин'), fetchAge()]).then((values) {
+    print(values[0]);
+
+    final ageInt = int.parse(values[1]);
+    final ageStr = ageInt.toString();
+
+    String word;
+    if (ageInt % 10 == 1 && ageInt != 11) {
+      word = 'рік';
+    } else if ([2, 3, 4].contains(ageInt % 10) &&
+        ![12, 13, 14].contains(ageInt)) {
+      word = 'роки';
+    } else {
+      word = 'років';
+    }
+
+    print('Мені $ageStr $word');
+
+    sw.stop();
+
+    print('Час виконання: ${sw.elapsedMilliseconds} мс');
   });
 }
