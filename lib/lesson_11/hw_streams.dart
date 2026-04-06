@@ -1,5 +1,6 @@
 void main() {
   task1();
+  task2();
 }
 
 // Task 6: Стрім з чисел (fromIterable)
@@ -20,4 +21,17 @@ void task1() {
   awaited();
 
   stream.listen(print);
+}
+
+// Task 7: Зворотний відлік зі стріму (periodic)
+//
+// Створіть Stream<int> за допомогою Stream.periodic, який генерує числа
+// з затримкою в 1 секунду.
+// Обмежте відлік до 10 чисел за допомогою методу take.
+// Виведіть кожне число у консоль у форматі:"1...", "2...", "3...", ... "10...".
+void task2() {
+  Stream.periodic(
+    const Duration(seconds: 1),
+    (i) => i + 1,
+  ).take(10).listen((event) => print('$event...'));
 }
