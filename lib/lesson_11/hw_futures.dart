@@ -1,6 +1,7 @@
 void main() {
   task1();
   task2();
+  task3();
 }
 
 Future<String> fetchName(String name) async {
@@ -47,5 +48,40 @@ void task2() {
     }
 
     print('Мені $ageStr $word');
+  });
+}
+
+// Task 3: Послідовне виконання Future
+//
+// Виконайте методи fetchName() та fetchAge() послідовно.
+// Виміряйте та виведіть час виконання обох методів.
+// Порада. Можете використати для виконання другого пункту
+// клас https://api.flutter.dev/flutter/dart-core/Stopwatch-class.html
+void task3() {
+  final sw = Stopwatch()..start();
+
+  fetchName('Костянтин').then((name) {
+    print(name);
+
+    fetchAge().then((age) {
+      final ageInt = int.parse(age);
+      final ageStr = ageInt.toString();
+
+      String word;
+      if (ageInt % 10 == 1 && ageInt != 11) {
+        word = 'рік';
+      } else if ([2, 3, 4].contains(ageInt % 10) &&
+          ![12, 13, 14].contains(ageInt)) {
+        word = 'роки';
+      } else {
+        word = 'років';
+      }
+
+      print('Мені $ageStr $word');
+
+      sw.stop();
+
+      print('Час виконання: ${sw.elapsedMilliseconds} мс');
+    });
   });
 }
