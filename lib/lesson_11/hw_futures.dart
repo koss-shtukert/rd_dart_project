@@ -3,6 +3,7 @@ void main() {
   task2();
   task3();
   task4();
+  task5();
 }
 
 Future<String> fetchName(String name) async {
@@ -117,4 +118,25 @@ void task4() {
 
     print('Час виконання: ${sw.elapsedMilliseconds} мс');
   });
+}
+
+// Task 5: Зворотний відлік з затримкою
+//
+// Напишіть функцію Future<String> delayedCountdown(int seconds),
+// яка приймає кількість секунд.
+// Ця функція повинна щосекунди виводити у консоль відлік
+// (наприклад: "3...", "2...", "1...").
+// В кінці відліку метод має повертати рядок "Старт!".
+void task5() {
+  Future<String> delayedCountdown(int seconds) async {
+    for (var i = seconds; i > 0; i--) {
+      print('$i...');
+
+      await Future<void>.delayed(Duration(seconds: 1));
+    }
+
+    return 'Старт!';
+  }
+
+  delayedCountdown(5).then(print);
 }
